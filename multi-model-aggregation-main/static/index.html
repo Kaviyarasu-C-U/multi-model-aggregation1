@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS — Consensus AI</title>
+  <meta name="description" content="Multi-model AI consensus — 5 models, one synthesized truth.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+<div class="sidebar-overlay"></div>
+
+<!-- ── History Sidebar ── -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h3>⏱ History</h3>
+    <button class="btn-icon" onclick="toggleSidebar()">✕</button>
+  </div>
+  <div class="sidebar-search">
+    <input id="history-search" type="text" placeholder="🔍  Search…">
+  </div>
+  <div class="history-list" id="history-list">
+    <div class="empty-state">No history yet</div>
+  </div>
+</aside>
+
+<!-- ── Nav ── -->
+<nav>
+  <button class="btn-icon" onclick="toggleSidebar()">☰</button>
+  <span class="nav-logo">NEXUS <span>consensus</span></span>
+  <div class="nav-spacer"></div>
+  <span class="nav-stat" id="nav-stat">0 queries</span>
+  <button class="btn-new-conv" onclick="newConversation()">✦ New Conversation</button>
+  <button class="btn-icon" id="engine-panel-toggle" onclick="toggleEnginePanel()" title="Toggle Engine Panel">⚙</button>
+  <div class="avatar" id="user-avatar" onclick="openAccountModal()">?</div>
+</nav>
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- Conversation area -->
+  <div id="conv-area">
+
+    <!-- Empty / hero state -->
+    <div id="empty-state" class="empty-state-hero">
+      <div class="hero-icon">◆</div>
+      <h1 class="hero-title">Multi-Model Consensus Intelligence</h1>
+      <p class="hero-sub">Ask anything — 5 AI models reason in parallel, a consensus answer is synthesized</p>
+      <div class="model-badges">
+        <span class="badge badge-cyan">🌟 Gemini 2.5 Flash</span>
+        <span class="badge badge-teal">⚡ Gemini 2.5 Flash-Lite</span>
+        <span class="badge badge-blue">🔷 Llama 3.3 70B</span>
+        <span class="badge badge-purple">🧠 Llama 3.1 8B</span>
+        <span class="badge badge-rose">🌀 Command A</span>
+      </div>
+    </div>
+
+    <!-- Conversation header (shown after first query) -->
+    <div id="conv-header" class="conv-header" style="display:none">
+      <span class="conv-pill" id="conv-pill">Conversation 1</span>
+      <span class="conv-title" id="conv-title"></span>
+    </div>
+
+    <!-- Thread -->
+    <div id="conv-thread"></div>
+
+    <!-- Loading indicator -->
+    <div id="loading-turn" class="loading-turn" style="display:none">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <span>Querying 5 models simultaneously…</span>
+      <span class="loading-sub" id="loading-sub"></span>
+    </div>
+
+  </div>
+
+  <!-- Sticky input -->
+  <div class="input-section">
+    <div class="query-card" id="query-card">
+      <textarea id="query-input" placeholder="Ask anything… Enter to send" rows="1"></textarea>
+      <div class="query-footer">
+        <span class="q-hint">↵ Send &nbsp;·&nbsp; Shift+↵ New line</span>
+        <button class="btn-submit" id="submit-btn" onclick="submitQuery()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          Engage All
+        </button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Engine Panel (Right Side) ── -->
+<aside class="engine-panel" id="engine-panel">
+  <div class="ep-header">
+    <div class="ep-title">
+      <span class="ep-title-icon">⚡</span>
+      <span>Engine Status</span>
+    </div>
+    <div class="ep-status-badge" id="ep-status-badge">IDLE</div>
+  </div>
+
+  <div class="ep-models" id="ep-models">
+
+    <!-- Model 1: Gemini 2.5 Flash -->
+    <div class="ep-model" id="epm-0" data-index="0">
+      <div class="ep-engine-ring" id="epr-0">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="18" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+          <circle class="ep-arc" cx="22" cy="22" r="18" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="ep-model-icon">🌟</span>
+      </div>
+      <div class="ep-model-info">
+        <div class="ep-model-name">Gemini 2.5 Flash</div>
+        <div class="ep-model-provider">Google · Gemini API</div>
+        <div class="ep-model-stat" id="eps-0">Standby</div>
+      </div>
+      <div class="ep-indicator" id="epi-0"></div>
+    </div>
+
+    <!-- Model 2: Gemini 2.5 Flash-Lite -->
+    <div class="ep-model" id="epm-1" data-index="1">
+      <div class="ep-engine-ring" id="epr-1">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="18" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+          <circle class="ep-arc" cx="22" cy="22" r="18" stroke="#14b8a6" stroke-width="3" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="ep-model-icon">⚡</span>
+      </div>
+      <div class="ep-model-info">
+        <div class="ep-model-name">Gemini 2.5 Flash-Lite</div>
+        <div class="ep-model-provider">Google · Gemini API</div>
+        <div class="ep-model-stat" id="eps-1">Standby</div>
+      </div>
+      <div class="ep-indicator" id="epi-1"></div>
+    </div>
+
+    <!-- Model 3: Llama 3.3 70B -->
+    <div class="ep-model" id="epm-2" data-index="2">
+      <div class="ep-engine-ring" id="epr-2">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="18" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+          <circle class="ep-arc" cx="22" cy="22" r="18" stroke="#6366f1" stroke-width="3" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="ep-model-icon">🔷</span>
+      </div>
+      <div class="ep-model-info">
+        <div class="ep-model-name">Llama 3.3 70B</div>
+        <div class="ep-model-provider">Groq · Fast Inference</div>
+        <div class="ep-model-stat" id="eps-2">Standby</div>
+      </div>
+      <div class="ep-indicator" id="epi-2"></div>
+    </div>
+
+    <!-- Model 4: Llama 3.1 8B -->
+    <div class="ep-model" id="epm-3" data-index="3">
+      <div class="ep-engine-ring" id="epr-3">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="18" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+          <circle class="ep-arc" cx="22" cy="22" r="18" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="ep-model-icon">🧠</span>
+      </div>
+      <div class="ep-model-info">
+        <div class="ep-model-name">Llama 3.1 8B</div>
+        <div class="ep-model-provider">Cerebras · Ultra-fast</div>
+        <div class="ep-model-stat" id="eps-3">Standby</div>
+      </div>
+      <div class="ep-indicator" id="epi-3"></div>
+    </div>
+
+    <!-- Model 5: Command A -->
+    <div class="ep-model" id="epm-4" data-index="4">
+      <div class="ep-engine-ring" id="epr-4">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="18" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+          <circle class="ep-arc" cx="22" cy="22" r="18" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="ep-model-icon">🌀</span>
+      </div>
+      <div class="ep-model-info">
+        <div class="ep-model-name">Command A</div>
+        <div class="ep-model-provider">Cohere · Enterprise</div>
+        <div class="ep-model-stat" id="eps-4">Standby</div>
+      </div>
+      <div class="ep-indicator" id="epi-4"></div>
+    </div>
+
+  </div>
+
+  <!-- Consensus Engine indicator -->
+  <div class="ep-consensus" id="ep-consensus">
+    <div class="ep-consensus-ring" id="ep-consensus-ring">
+      <span>◆</span>
+    </div>
+    <div class="ep-consensus-info">
+      <div class="ep-consensus-label">Consensus Engine</div>
+      <div class="ep-consensus-stat" id="ep-consensus-stat">Waiting for models…</div>
+    </div>
+  </div>
+
+  <div class="ep-footer">
+    <div class="ep-footer-line" id="ep-time-display">—</div>
+    <div class="ep-footer-label">Last broadcast time</div>
+  </div>
+</aside>
+
+<!-- ── Account Modal ── -->
+<div class="modal-bg" id="account-modal" onclick="if(event.target===this)closeAccountModal()">
+  <div class="modal">
+    <h2>⚙ Account</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="sv" id="stat-total">0</div><div class="sl">Queries</div></div>
+      <div class="stat-box"><div class="sv" id="stat-avg-time">--</div><div class="sl">Avg Time</div></div>
+      <div class="stat-box"><div class="sv" id="stat-since">--</div><div class="sl">Since</div></div>
+    </div>
+    <div class="form-group"><label>Name</label><input id="acc-name" type="text"></div>
+    <div class="form-group"><label>Email</label><input id="acc-email" type="email"></div>
+    <div class="form-group"><label>Organization</label><input id="acc-org" type="text"></div>
+    <div class="form-group">
+      <label>Avatar Color</label>
+      <div class="color-row">
+        <div class="color-opt" data-color="#6366f1" style="background:#6366f1"></div>
+        <div class="color-opt" data-color="#06b6d4" style="background:#06b6d4"></div>
+        <div class="color-opt" data-color="#a855f7" style="background:#a855f7"></div>
+        <div class="color-opt" data-color="#f43f5e" style="background:#f43f5e"></div>
+        <div class="color-opt" data-color="#f59e0b" style="background:#f59e0b"></div>
+        <div class="color-opt" data-color="#22c55e" style="background:#22c55e"></div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeAccountModal()">Cancel</button>
+      <button class="btn-save" onclick="saveAccount()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Environment variables (API keys, secrets)
+.env
+
+# Python virtual environment
+.venv/
+env/
+venv/
+
+# Database files
+*.db
+*.sqlite
+nexus.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local JSON dumps/logs
+responses.json
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+.DS_Store

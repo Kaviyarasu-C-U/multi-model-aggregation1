@@ -1,0 +1,108 @@
+{
+  "query": "What causes inflation and how does a central bank control it?",
+  "timestamp": "2026-04-26T00:30:05.905244",
+  "phase1_timestamp": "2026-04-26T00:30:01.945497",
+  "total_consensus_time_seconds": 3.96,
+  "models_evaluated": 5,
+  "models_failed": 0,
+  "top_k_selected": 3,
+  "consensus_rankings": [
+    {
+      "rank": 1,
+      "model": "Command A (Cohere)",
+      "provider": "Cohere",
+      "consensus_score": 0.5117,
+      "time_taken_seconds": 18.13
+    },
+    {
+      "rank": 2,
+      "model": "Llama 3.3 70B (Groq)",
+      "provider": "Groq (Meta Llama)",
+      "consensus_score": 0.5114,
+      "time_taken_seconds": 5.52
+    },
+    {
+      "rank": 3,
+      "model": "Llama 3.1 8B (Cerebras)",
+      "provider": "Cerebras (FREE)",
+      "consensus_score": 0.511,
+      "time_taken_seconds": 3.33
+    },
+    {
+      "rank": 4,
+      "model": "Gemini 2.5 Flash-Lite",
+      "provider": "Google (Gemini 2.5 Flash-Lite)",
+      "consensus_score": 0.457,
+      "time_taken_seconds": 5.27
+    },
+    {
+      "rank": 5,
+      "model": "Gemini 2.5 Flash",
+      "provider": "Google (Gemini 2.5 Flash)",
+      "consensus_score": 0.2019,
+      "time_taken_seconds": 9.3
+    }
+  ],
+  "similarity_matrix": [
+    [
+      1.0000000000000004,
+      0.2786155461316856,
+      0.17638782543090334,
+      0.1989248363621233,
+      0.1536409705622827
+    ],
+    [
+      0.2786155461316856,
+      0.9999999999999993,
+      0.4925440104559003,
+      0.49355265306095203,
+      0.5634706668391837
+    ],
+    [
+      0.17638782543090334,
+      0.4925440104559003,
+      0.9999999999999999,
+      0.6993431537744301,
+      0.6774262975744297
+    ],
+    [
+      0.1989248363621233,
+      0.49355265306095203,
+      0.6993431537744301,
+      1.0000000000000002,
+      0.6521847269257002
+    ],
+    [
+      0.1536409705622827,
+      0.5634706668391837,
+      0.6774262975744297,
+      0.6521847269257002,
+      0.9999999999999999
+    ]
+  ],
+  "model_names": [
+    "Gemini 2.5 Flash",
+    "Gemini 2.5 Flash-Lite",
+    "Llama 3.3 70B (Groq)",
+    "Llama 3.1 8B (Cerebras)",
+    "Command A (Cohere)"
+  ],
+  "final_answer": "Inflation is a complex and multifaceted economic phenomenon that can be caused by a variety of factors. At its core, inflation is a sustained increase in the general price level of goods and services in an economy over time. The main factors that contribute to inflation are:\n\n1. **Demand-Pull Inflation**: When aggregate demand exceeds the available supply of goods and services, businesses can raise their prices, leading to inflation. This can occur when an economy is growing rapidly, and consumers have more disposable income to spend.\n2. **Cost-Push Inflation**: Increases in production costs, such as higher wages or raw materials, can lead to higher prices. If businesses face increased costs, they may pass these costs on to consumers in the form of higher prices.\n3. **Monetary Expansion**: An increase in the money supply, often caused by a central bank's expansionary monetary policy, can lead to inflation. When there is more money chasing a constant quantity of goods and services, prices tend to rise.\n4. **Supply Chain Disruptions**: Disruptions to supply chains, such as natural disasters or global events, can lead to shortages and higher prices.\n5. **Expectations**: If consumers and businesses expect prices to rise in the future, they may be more likely to spend and invest now, driving up prices and creating a self-reinforcing cycle of inflation.\n\nCentral banks play a crucial role in controlling inflation using a range of monetary policy tools. The primary goal of monetary policy is to achieve price stability, which is often defined as an inflation rate of 2% annually. The main tools used by central banks to control inflation are:\n\n1. **Interest Rate Policy**: Central banks can raise interest rates to reduce borrowing and spending, which can help to slow down the economy and reduce inflation. Higher interest rates make borrowing more expensive, which can reduce demand for goods and services, and subsequently, prices. Conversely, lowering interest rates can stimulate borrowing, spending, and investment, which can help combat deflation or stimulate economic growth.\n2. **Open Market Operations**: Central banks can buy or sell government securities on the open market to increase or decrease the money supply. By reducing the money supply, the central bank can reduce inflationary pressures.\n3. **Reserve Requirements**: Central banks can adjust the amount of reserves banks are required to hold relative to their deposits. Increasing reserve requirements can reduce the amount of money available for lending and spending, which can help to control inflation.\n4. **Forward Guidance**: Central banks can use communication and guidance to influence expectations about future interest rates and inflation. By setting clear expectations, central banks can help to shape market expectations and influence inflation.\n5. **Inflation Targeting**: Many central banks have adopted inflation targeting as a monetary policy framework, which involves setting a specific inflation target and using monetary policy tools to achieve it.\n\nWhen inflation is high, a central bank may use additional tools to combat it, such as:\n\n1. **Quantitative Tightening**: Reducing the central bank's balance sheet by selling assets or allowing them to mature without reinvestment, which reduces the money supply.\n2. **Tightening Credit**: The central bank can tighten credit by increasing the cost of borrowing and reducing the availability of credit, which can help reduce demand and slow down the economy.\n\nIn summary, inflation is a complex phenomenon caused by a variety of factors, and central banks play a crucial role in controlling it using a range of monetary policy tools. By understanding the causes of inflation and the tools available to control it, central banks can work to maintain price stability and promote economic growth.",
+  "top_responses_used": [
+    {
+      "model": "Command A (Cohere)",
+      "consensus_score": 0.5117,
+      "response": "Inflation is primarily caused by an imbalance between the supply of money and the demand for goods and services in an economy. There are several key factors that contribute to inflation:\n\n1. **Demand-Pull Inflation**: This occurs when aggregate demand for goods and services exceeds aggregate supply, often driven by factors such as increased consumer spending, investment, or government expenditures. When demand outstrips supply, prices tend to rise.\n\n2. **Cost-Push Inflation**: This happens when production costs increase, often due to higher wages, raw material prices, or taxes. Businesses pass these increased costs on to consumers in the form of higher prices.\n\n3. **Monetary Expansion**: When the money supply grows faster than the economy's production of goods and services, the excess money chases the same amount of goods, leading to higher prices.\n\n4. **External Shocks**: Events like spikes in oil prices, natural disasters, or geopolitical tensions can disrupt supply chains and increase costs, leading to inflation.\n\n5. **Expectations of Inflation**: If businesses and consumers expect prices to rise in the future, they may adjust their behavior (e.g., raising wages or prices) in anticipation, creating a self-fulfilling prophecy.\n\n### How Central Banks Control Inflation\n\nCentral banks, such as the Federal Reserve in the United States, the European Central Bank (ECB), or the Bank of England, use various tools to control inflation and maintain price stability. The primary tools include:\n\n1. **Interest Rate Policy**:\n   - **Raising Interest Rates**: Higher interest rates increase the cost of borrowing, which reduces consumer spending and business investment. This decreases aggregate demand, easing inflationary pressures.\n   - **Lowering Interest Rates**: Conversely, lowering interest rates stimulates borrowing, spending, and investment, which can help combat deflation or stimulate economic growth.\n\n2. **Open Market Operations**:\n   - Central banks buy or sell government securities to influence the money supply. Selling securities reduces the money supply by absorbing excess liquidity from the banking system, which can help curb inflation.\n\n3. **Reserve Requirements**:\n   - Central banks can adjust the amount of reserves banks are required to hold relative to their deposits. Increasing reserve requirements reduces the amount of money banks can lend, tightening the money supply and helping to control inflation.\n\n4. **Forward Guidance**:\n   - Central banks communicate their future monetary policy intentions to shape inflation expectations. If businesses and consumers expect inflation to remain under control, they are less likely to engage in behaviors that could exacerbate inflation.\n\n5. **Quantitative Tightening/Easing**:\n   - **Quantitative Tightening**: Reducing the central bank's balance sheet by selling assets or allowing them to mature without reinvestment, which reduces the money supply.\n   - **Quantitative Easing**: Increasing the money supply by purchasing assets, typically used to combat deflation or stimulate economic growth.\n\n6. **Inflation Targeting**:\n   - Many central banks set explicit inflation targets (e.g., 2%) and adjust monetary policy to keep inflation close to this target. This helps anchor inflation expectations and guides policy decisions.\n\n### Example: The Federal Reserve\n\nThe Federal Reserve uses a dual mandate to promote maximum employment and stable prices. To control inflation, it primarily adjusts the federal funds rate (the interest rate at which banks lend to each other overnight). For instance, during periods of high inflation, the Fed may raise the federal funds rate to cool down the economy. Additionally, it uses open market operations and forward guidance to influence inflation expectations and maintain price stability.\n\nIn summary, central banks control inflation by managing the money supply, influencing interest rates, and shaping inflation expectations through various monetary policy tools. Their goal is to maintain a balance that supports economic growth while keeping inflation at a manageable level."
+    },
+    {
+      "model": "Llama 3.3 70B (Groq)",
+      "consensus_score": 0.5114,
+      "response": "Inflation is a complex and multifaceted economic phenomenon that can be caused by a variety of factors. At its core, inflation is a sustained increase in the general price level of goods and services in an economy over time. There are several key factors that contribute to inflation:\n\n1. **Demand-Pull Inflation**: When aggregate demand exceeds the available supply of goods and services, businesses can raise their prices, leading to inflation. This can occur when an economy is growing rapidly, and consumers have more disposable income to spend.\n2. **Cost-Push Inflation**: Increases in production costs, such as higher wages or raw materials, can lead to higher prices. If businesses face increased costs, they may pass these costs on to consumers in the form of higher prices.\n3. **Monetary Policy**: An increase in the money supply, often caused by central banks printing more money, can lead to inflation. Excess money in circulation can drive up prices as more money chases a constant quantity of goods and services.\n4. **Supply Chain Disruptions**: Disruptions to supply chains, such as natural disasters or global events, can lead to shortages and higher prices.\n5. **Expectations**: If consumers and businesses expect prices to rise in the future, they may be more likely to spend and invest now, driving up prices and creating a self-reinforcing cycle of inflation.\n\nCentral banks, such as the Federal Reserve in the United States, play a crucial role in controlling inflation. Their primary tools for controlling inflation are:\n\n1. **Interest Rates**: Central banks can raise interest rates to reduce borrowing and spending, which can help to slow down the economy and reduce inflation. Higher interest rates make borrowing more expensive, which can reduce demand for goods and services, and subsequently, prices.\n2. **Open Market Operations**: Central banks can sell government securities on the open market to reduce the money supply and increase interest rates. This can help to reduce inflation by reducing the amount of money available for spending and investment.\n3. **Reserve Requirements**: Central banks can increase the reserve requirements for commercial banks, which can reduce the amount of money available for lending and spending.\n4. **Forward Guidance**: Central banks can use communication and guidance to influence expectations about future interest rates and inflation. By setting clear expectations, central banks can help to shape market expectations and influence inflation.\n5. **Inflation Targeting**: Many central banks, such as the Bank of England, have adopted inflation targeting as a monetary policy framework. This involves setting a specific inflation target, usually around 2%, and using monetary policy tools to achieve it.\n\nThe process of controlling inflation typically involves the following steps:\n\n1. **Monitoring Inflation**: Central banks closely monitor inflation rates, using data such as the Consumer Price Index (CPI) or the Personal Consumption Expenditures (PCE) index.\n2. **Assessing the Economy**: Central banks assess the overall state of the economy, including factors such as GDP growth, employment, and wage growth.\n3. **Setting Monetary Policy**: Based on their assessment, central banks set monetary policy, including interest rates, reserve requirements, and open market operations.\n4. **Communicating Policy**: Central banks communicate their policy decisions and expectations to the public, using tools such as press conferences, statements, and forward guidance.\n5. **Evaluating Effectiveness**: Central banks continuously evaluate the effectiveness of their monetary policy decisions and make adjustments as needed to achieve their inflation target.\n\nIn summary, inflation is a complex phenomenon caused by a variety of factors, and central banks play a crucial role in controlling it using a range of monetary policy tools. By understanding the causes of inflation and the tools available to control it, central banks can work to maintain price stability and promote economic growth."
+    },
+    {
+      "model": "Llama 3.1 8B (Cerebras)",
+      "consensus_score": 0.511,
+      "response": "**What causes inflation?**\n\nInflation is a sustained increase in the general price level of goods and services in an economy over a period of time. It is a complex phenomenon with multiple causes, but some of the main factors that contribute to inflation are:\n\n1. **Demand and Supply Imbalance**: When aggregate demand exceeds the available supply of goods and services, businesses can raise their prices, leading to inflation.\n2. **Monetary Policy**: An increase in the money supply, often caused by a central bank's expansionary monetary policy, can lead to inflation. When there is more money chasing a constant quantity of goods and services, prices tend to rise.\n3. **Economic Growth**: A rapidly growing economy can lead to inflation as demand for goods and services increases.\n4. **Cost-Push Inflation**: An increase in production costs, such as wages and raw materials, can lead to higher prices.\n5. **Demand-Pull Inflation**: An increase in aggregate demand, often caused by government spending or tax cuts, can lead to inflation.\n6. **Supply Chain Disruptions**: Events such as natural disasters, trade wars, or global pandemics can disrupt supply chains and lead to price increases.\n7. **Expectations**: If consumers and businesses expect prices to rise in the future, they may be more likely to raise prices now, creating a self-fulfilling prophecy.\n\n**How does a central bank control inflation?**\n\nA central bank, such as the Federal Reserve in the United States, uses monetary policy tools to control inflation. The primary goal of monetary policy is to achieve price stability, which is often defined as an inflation rate of 2% annually. Here are some ways a central bank controls inflation:\n\n1. **Setting Interest Rates**: By adjusting short-term interest rates, the central bank can influence the cost of borrowing and the overall level of economic activity. Higher interest rates can reduce demand and slow down the economy, while lower interest rates can stimulate demand and economic growth.\n2. **Open Market Operations**: The central bank buys or sells government securities on the open market to increase or decrease the money supply. By reducing the money supply, the central bank can reduce inflationary pressures.\n3. **Reserve Requirements**: The central bank sets reserve requirements for commercial banks, which dictate the percentage of deposits that banks must hold in reserve rather than lending out. By increasing reserve requirements, the central bank can reduce the amount of money available for lending and reduce inflation.\n4. **Forward Guidance**: The central bank communicates its future policy intentions to influence market expectations and shape inflationary expectations.\n5. **Quantitative Easing**: In extreme cases, the central bank can implement quantitative easing, where it buys large quantities of government securities to inject liquidity into the economy and stimulate economic growth.\n\n**Tools to combat inflation**\n\nWhen inflation is high, a central bank may use the following tools to combat it:\n\n1. **Raise Interest Rates**: Higher interest rates can reduce demand and slow down the economy, which can help reduce inflation.\n2. **Sell Government Securities**: By selling government securities, the central bank can reduce the money supply and reduce inflationary pressures.\n3. **Increase Reserve Requirements**: Higher reserve requirements can reduce the amount of money available for lending and reduce inflation.\n4. **Tighten Credit**: The central bank can tighten credit by increasing the cost of borrowing and reducing the availability of credit, which can help reduce demand and slow down the economy.\n\nIn summary, a central bank uses monetary policy tools to control inflation by influencing the money supply, interest rates, and credit availability. By setting interest rates, conducting open market operations, and using other tools, the central bank can achieve price stability and maintain low inflation."
+    }
+  ]
+}
